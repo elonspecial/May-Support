@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Maybank-inspired local login prototype" />
+  <title>Maybank Inspired | Login Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="brand-panel" aria-label="Brand introduction">
+      <div class="brand-panel__topline">
+        <span class="prototype-tag">LOCAL PROTOTYPE</span>
+        <span class="secure-status"><span class="status-dot"></span> Secure connection</span>
+      </div>
+
+      <div class="brand-lockup" aria-label="Maybank inspired demo">
+        <div class="tiger-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div>
+          <p class="brand-name">maybank</p>
+          <p class="brand-caption">Humanising financial services</p>
+        </div>
+      </div>
+
+      <div class="brand-message">
+        <p class="eyebrow">A simpler way to bank</p>
+        <h1>Good things happen when you're in control.</h1>
+        <p class="brand-copy">Manage your everyday banking with a clear view of what matters, whenever you need it.</p>
+      </div>
+
+      <div class="brand-panel__footer">
+        <div class="footer-rule"></div>
+        <p>Built for a calmer banking day.</p>
+      </div>
+    </section>
+
+    <section class="login-panel" aria-labelledby="login-title">
+      <div class="login-panel__inner">
+        <div class="mobile-brand">
+          <div class="tiger-mark tiger-mark--small" aria-hidden="true"><span></span><span></span><span></span></div>
+          <span>maybank</span>
+        </div>
+
+        <div class="login-heading">
+          <p class="eyebrow">Welcome back</p>
+          <h2 id="login-title">Sign in to your account</h2>
+          <p>Use your login details to continue.</p>
+        </div>
+
+        <form class="login-form" id="login-form">
+          <label for="username">Username</label>
+          <div class="input-wrap">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0M12 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /></svg>
+            <input id="username" name="username" type="text" autocomplete="username" placeholder="Enter your username" required />
+          </div>
+
+          <div class="field-row">
+            <label for="password">Password</label>
+            <a href="#help" class="inline-link">Forgot password?</a>
+          </div>
+          <div class="input-wrap">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg>
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required />
+            <button class="password-toggle" type="button" aria-label="Show password" aria-pressed="false">Show</button>
+          </div>
+
+          <label class="remember-option">
+            <input type="checkbox" name="remember" />
+            <span class="checkmark" aria-hidden="true"></span>
+            <span>Remember this device</span>
+          </label>
+
+          <button class="primary-button" type="submit">Sign in <span aria-hidden="true">&#8594;</span></button>
+          <p class="form-note" id="form-note" role="status">Demo only. No details are sent anywhere.</p>
+        </form>
+
+        <form class="verification-form" id="verification-form" hidden>
+          <div class="verification-badge">DEMO VERIFICATION</div>
+          <div class="verification-heading">
+            <p class="eyebrow">One more step</p>
+            <h3>Confirm this demo session</h3>
+            <p>This screen uses a fake code and does not request personal or security information.</p>
+          </div>
+
+          <label for="demo-code">Demo verification code</label>
+          <input id="demo-code" name="demo-code" type="text" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" placeholder="Enter 123456" autocomplete="off" required />
+          <label class="remember-option owner-confirmation">
+            <input id="owner-confirmation" type="checkbox" required />
+            <span class="checkmark" aria-hidden="true"></span>
+            <span>I confirm I am testing this local prototype</span>
+          </label>
+          <button class="primary-button" type="submit">Continue demo <span aria-hidden="true">&#8594;</span></button>
+          <p class="form-note" id="verification-note" role="status">Use the sample code shown above.</p>
+        </form>
+
+        <section class="account-dashboard" id="account-dashboard" aria-labelledby="dashboard-title" hidden>
+          <div class="dashboard-nav">
+            <div class="dashboard-brand"><div class="tiger-mark tiger-mark--small" aria-hidden="true"><span></span><span></span><span></span></div><span>maybank</span></div>
+            <div class="dashboard-nav-actions"><button type="button" class="icon-button" id="notification-button" aria-label="Show notifications"><span aria-hidden="true">&#9673;</span><i></i></button><button type="button" class="avatar-button" id="sign-out-button" aria-label="Sign out">A</button></div>
+          </div>
+          <div class="dashboard-topline">
+            <div>
+              <p class="eyebrow">Demo account</p>
+              <h3 id="dashboard-title">Good morning, Alex</h3>
+            </div>
+            <span class="demo-chip">MOCK DATA</span>
+          </div>
+          <div class="balance-card">
+            <div class="balance-card__topline"><span>Premier everyday account</span><span>•• 4821</span></div>
+            <p class="balance-label">Available balance</p>
+            <p class="balance-value">RM 2,800,000<span>.00</span></p>
+            <div class="balance-card__footer"><span>Updated just now <em>· MYR</em></span><span class="balance-mark">my</span></div>
+          </div>
+          <div class="quick-actions" aria-label="Demo quick actions">
+            <button type="button" class="quick-action" data-demo-action="Transfer demo"><span class="quick-action-icon">&#8599;</span><span>Transfer</span></button>
+            <button type="button" class="quick-action" data-demo-action="Pay bills demo"><span class="quick-action-icon">&#9679;</span><span>Pay bills</span></button>
+            <button type="button" class="quick-action" data-demo-action="Top up demo"><span class="quick-action-icon">+</span><span>Top up</span></button>
+            <button type="button" class="quick-action" data-demo-action="Statements demo"><span class="quick-action-icon">&#9776;</span><span>Statements</span></button>
+          </div>
+          <div class="dashboard-section-head"><h4>Recent activity</h4><button type="button" class="text-button">View all <span aria-hidden="true">&#8594;</span></button></div>
+          <div class="activity-list">
+            <div class="activity-item"><span class="activity-icon">&#8593;</span><span><strong>Salary credit</strong><small>Today, 09:42 · Completed</small></span><b class="credit">+ RM 4,800.00</b></div>
+            <div class="activity-item"><span class="activity-icon">&#8595;</span><span><strong>Grocery market</strong><small>Yesterday, 18:15</small></span><b>- RM 86.40</b></div>
+            <div class="activity-item"><span class="activity-icon">&#8595;</span><span><strong>Monthly utilities</strong><small>08 Sep 2026</small></span><b>- RM 142.80</b></div>
+          </div>
+          <div class="spending-panel">
+            <div class="dashboard-section-head"><h4>Spending this month</h4><span class="spending-total">RM 1,284.20</span></div>
+            <div class="spending-bar" aria-label="Monthly spending progress"><span></span></div>
+            <div class="spending-legend"><span><i class="legend-dot legend-dot--needs"></i>Essentials <b>RM 824.20</b></span><span><i class="legend-dot legend-dot--wants"></i>Lifestyle <b>RM 460.00</b></span></div>
+          </div>
+          <p class="dashboard-status" id="dashboard-status" role="status"></p>
+          <p class="dashboard-note">This dashboard contains fictional data for interface testing only.</p>
+        </section>
+
+        <div class="login-actions" id="login-actions">
+          <div class="divider"><span>or</span></div>
+          <button class="secondary-button" type="button" id="quick-access">Quick access <span aria-hidden="true">&#8594;</span></button>
+
+          <p class="help-copy">Need help? <a href="#support" class="inline-link">Contact support</a></p>
+          <p class="legal-copy">By signing in, you agree to the <a href="#terms">Terms of Use</a> and <a href="#privacy">Privacy Notice</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
